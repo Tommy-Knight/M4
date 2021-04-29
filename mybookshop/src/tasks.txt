@@ -1,0 +1,1 @@
+Create a FilterBookList feature. By writing a search query into an input field, the BookList should show only the books with the specified string into the title (save the query into the BookList component state and filter the books accordingly).
