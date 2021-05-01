@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./css/style.css"
 import WarningSign from "../../mybookshop/src/components/WarningSign"
 import MyBadge from "../../mybookshop/src/components/MyBadge"
 import FilterBookList from "../../mybookshop/src/components/FilterBookList"

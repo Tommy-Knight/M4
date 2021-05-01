@@ -1,0 +1,90 @@
+body{
+    background-color: #141414;
+    color: #fff;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#netflixLogo{
+    width: 100px;
+}
+#kidsLogo, #avatar{
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#dropdownMenu2{
+    border: 3px solid white;
+    background-color: #141414;
+}
+#dropdownMenuButton1{
+    background-color: #141414;
+    border: 0px
+}
+.navbar{
+    background-color: #141414 !important;
+}
+table {
+    line-height: 1.8;
+  }
+
+.links{
+    margin-top: 50px;
+    margin-left: 0px;
+}
+  #clickableAwesomeFont {
+cursor: pointer
+}
+
+table {
+width: 70%;
+}
+.center {
+margin-left: 0px ;
+margin-right: auto;
+}
+.left { 
+     margin-left: -369px ;
+}
+footerBox{
+    min-height: 100%;
+    position: relative;
+}
+#settings{
+    background-color: white;
+    color: black;
+}
+#accountInfo{
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.border-bottom {
+    border-bottom-color: #dee2e642 !important;
+  }
+  .profHead{
+      color: grey;
+      padding: 1px;
+  }
+  .profButton{
+      color: grey;
+      background-color:#141414;
+      letter-spacing: 2px;
+      border: 1px solid grey; 
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width:min-content;
+      text-align: center;
+
+  }
+  .selectpicker{
+    border: 3px solid white;
+    background-color: #141414;
+    color: white;
+  }
+  #ratings{
+      width: 200px;
+      color: white;
+      background-color: rgb(99, 99, 99);
+      padding: 5px;
+  }
