@@ -17,7 +17,7 @@ export default class CommentsBox extends Component {
 							value={this.state.user}
 							type="text"
 							placeholder="Who are you?"
-							onChange={(e) => this.setState({ user: e.target.value })}
+							onChange={(e) => this.setState({ name: e.target.value })}
 						/>
 					</Form.Group>
 					<Form.Group>
@@ -26,7 +26,7 @@ export default class CommentsBox extends Component {
 							value={this.state.text}
 							type="text"
 							placeholder="Review this book!"
-							onChange={(e) => this.setState({ text: e.target.value })}
+							onChange={(e) => this.setState({ comment: e.target.value })}
 						/>
 					</Form.Group>
 				</Form>
