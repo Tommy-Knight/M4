@@ -17,7 +17,7 @@ class SingleBook extends React.Component {
 						<Card
 							className={this.state.selected ? "border border-danger" : ""}
 							onClick={this.toggleBorder}
-							style={{display:"inline-block"}}
+							style={{display:"inline-block!important"}}
 						>
 							<Card.Img variant="top" src={this.props.book.img} />
 							<Card.Body>
