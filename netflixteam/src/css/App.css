@@ -4,33 +4,15 @@ body {
 	font-family: "Helvetica", Helvetica, Arial, sans-serif;
 }
 
-.btn-without-outline {
-	border: none;
-}
 .row {
 	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: auto;
 }
-.col-xs-4 {
-	flex: 0 0 auto;
-}
-footer ul li {
-	color: #777;
-}
+
 .btn-color {
 	color: #999;
 	border: 1px solid white;
-}
-#TV-Shows {
-	display: inline;
-}
-
-.genre-details {
-	padding: 1em;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 }
 
 ::-webkit-scrollbar {
@@ -49,6 +31,7 @@ footer ul li {
 ::-webkit-scrollbar-thumb {
 	background: #222222;
 	border-radius: 10px;
+	width: 2px !important;
 }
 
 .movieHover {
@@ -71,7 +54,12 @@ a:hover {
 }
 
 .navbar {
-	background-color: #141414 !important;
+	background: rgb(0, 0, 0);
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(20, 20, 20, 1) 83%
+	);
 }
 input[type="text"]{
 	color: white;

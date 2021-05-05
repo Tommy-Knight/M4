@@ -4,7 +4,7 @@ import Link from "react-router-dom/Link"
 
 const NavBar = () => (
 	<Navbar
-		expand="lg"
+		expand="sm"
 		className="p-0"
 		style={{ backgroundColor: "#111", color: "white" }}
 	>
@@ -19,15 +19,15 @@ const NavBar = () => (
 			</Link>
 		</Navbar.Brand>
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
-		<Navbar.Collapse id="basic-navbar-nav" className="text-left ">
+		<Navbar.Collapse id="responsive-navbar-nav" className="text-left ">
 			<Nav>
-				<Link className="text-white m-3" to="/">
+				<Link className="text-white mx-1" to="/">
 					Home
 				</Link>
-				<Link className="text-white my-3" to="/series">
+				<Link className="text-white mx-1" to="/series">
 					Series
 				</Link>
-				<Link className="text-white m-3" to="/film">
+				<Link className="text-white mx-1" to="/film">
 					Film
 				</Link>
 			</Nav>

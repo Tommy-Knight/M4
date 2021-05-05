@@ -1,4 +1,5 @@
 import React from "react"
+import Carousel from "./Carousel"
 
 class DetailsPage extends React.Component {
 	state = {
@@ -69,6 +70,7 @@ class DetailsPage extends React.Component {
 					<div className="d-flex flex-column align-items-center">
 						<h1 className="text-white">{this.state.movieData.Title}</h1>
 						<img src={this.state.movieData.Poster} alt="" />
+						<hr />
 						<p className="w-50 text-white">{this.state.movieData.Plot}</p>
 						{this.state.comments.length > 0 &&
 							this.state.comments.map((comment) => (
@@ -76,6 +78,7 @@ class DetailsPage extends React.Component {
 									{comment.author} said {comment.comment}
 								</p>
 							))}
+						<Carousel movie={this.state.movieData.Title} />
 					</div>
 				) : (
 					<p className="text-white text-center">No data!</p>

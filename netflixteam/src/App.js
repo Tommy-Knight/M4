@@ -24,7 +24,7 @@ function App() {
 							render={(routerProps) => (
 								<DetailsPage {...routerProps} title="Show Details" />
 							)}
-							path="/details/:id"
+							path="/info/:id"
 							exact
 						/>
 						<Route path="/series">

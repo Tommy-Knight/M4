@@ -33,9 +33,6 @@ class Carousel extends Component {
 		}
 	}
 
-	selectedStyle = { border: "2px solid red", color: "red" }
-	notSelectedStyle = { border: "none", color: "black" }
-
 	render() {
 		return (
 			<>
@@ -46,22 +43,22 @@ class Carousel extends Component {
 					<Alert variant="danger">Uh Oh!</Alert>
 				)}
 				{this.state.movies.Search && (
-					<Container className="m-15 p-5" fluid>
-						<h3 className="font-weight-bold text-white text-left m-1 p-1">
+					<Container className="mx-15 p-5" fluid>
+						<h3 className="font-weight-bold text-white text-left m-2 p-2">
 							{this.props.movie}
 						</h3>
 						<Row className=" p-1 m-1">
 							{this.state.movies.Search.length > 0 ? (
 								this.state.movies.Search.map((movie) => (
 									<Col key={movie.imdbID} className="px-2">
-										<Link to={`/details/${movie.imdbID}`}>
+										<Link to={`/info/${movie.imdbID}`}>
 											<img className="movieHover" src={movie.Poster} alt={movie.Title} />
 											<div className="text-white">{movie.Title}</div>
 										</Link>
 									</Col>
 								))
 							) : (
-								<p>We don't have Movies yet!</p>
+								<p>Nothing here!</p>
 							)}
 						</Row>
 					</Container>

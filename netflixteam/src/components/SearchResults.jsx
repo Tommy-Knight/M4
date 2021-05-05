@@ -54,8 +54,14 @@ class SearchResults extends Component {
 							/>
 						</Form.Group>
 					</Form>
+					{this.state.isLoading && (
+						<Spinner
+							style={{ marginLeft: "20%" }}
+							animation="grow"
+							variant="danger"
+						/>
+					)}
 				</Container>
-				{this.state.isLoading && <Spinner animation="grow" variant="danger" />}
 				{!this.state.isLoading && this.state.isError && (
 					<Alert variant="danger">Uh Oh!</Alert>
 				)}
@@ -65,14 +71,10 @@ class SearchResults extends Component {
 							Searching for "{searchQuery}" Movies
 						</h3>
 						<Row>
-							{console.log(
-								"this.state.movies.Search:",
-								this.state.movies.Search
-							)}
 							{this.state.movies.Search.length > 0 ? (
 								this.state.movies.Search.map((movie) => (
 									<Col key={movie.imdbID} className="p-2">
-										<Link to={`/details/${movie.imdbID}`}>
+										<Link to={`/info/${movie.imdbID}`}>
 											<img
 												className="movieHover"
 												src={movie.Poster}
