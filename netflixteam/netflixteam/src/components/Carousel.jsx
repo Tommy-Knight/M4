@@ -1,11 +1,11 @@
-
 import { Container, Col, Row, Spinner, Alert } from "react-bootstrap"
 import { Component } from "react"
+import Link from "react-router-dom/Link"
 
 const API = "http://www.omdbapi.com/"
 const APIKEY = "c71a553d"
 
-class Galleries extends Component {
+class Carousel extends Component {
 	state = {
 		movies: {},
 		isLoading: false,
@@ -46,18 +46,18 @@ class Galleries extends Component {
 					<Alert variant="danger">Aww snap! We got an error!</Alert>
 				)}
 				{this.state.movies.Search && (
-					<Container fluid>
-						<h3 className="mt-4 text-white">{this.props.movie}</h3>
-						<Row className="no-gutters testimonial-group ">
-							{console.log(
-								"this.state.movies.Search:",
-								this.state.movies.Search
-							)}
+					<Container className="m-15 p-5" fluid>
+						<h3 className="font-weight-bold text-white text-left m-1 p-1">
+							{this.props.movie}
+						</h3>
+						<Row className=" p-1 m-1">
 							{this.state.movies.Search.length > 0 ? (
 								this.state.movies.Search.map((movie) => (
-									<Col key={movie.imdbID} className="px-1">
-										<img src={movie.Poster} alt={movie.Title} />
-										<div className="text-white">{movie.Title}</div>
+									<Col key={movie.imdbID} className="px-2">
+										<Link to={`/details/${movie.imdbID}`}>
+											<img className="movieHover" src={movie.Poster} alt={movie.Title} />
+											<div className="text-white">{movie.Title}</div>
+										</Link>
 									</Col>
 								))
 							) : (
@@ -71,4 +71,4 @@ class Galleries extends Component {
 	}
 }
 
-export default Galleries
+export default Carousel

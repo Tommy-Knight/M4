@@ -1,5 +1,6 @@
 import { Container, Col, Row, Spinner, Alert, Form } from "react-bootstrap"
 import { Component } from "react"
+import Link from "react-router-dom/Link"
 
 const API = "http://www.omdbapi.com/"
 const APIKEY = "c71a553d"
@@ -44,8 +45,9 @@ class SearchResults extends Component {
 			<>
 				<Container>
 					<Form>
-						<Form.Group controlId="formBasicEmail" className="mt-3">
+						<Form.Group className="mt-3">
 							<Form.Control
+								style={{ color: "white", background: "black" }}
 								type="text"
 								placeholder="Search"
 								onChange={(e) => this.onChangeFunction(e)}
@@ -60,8 +62,8 @@ class SearchResults extends Component {
 					<Alert variant="danger">Aww snap! We got an error!</Alert>
 				)}
 				{this.state.movies.Search && (
-					<Container fluid>
-						<h3 className="mt-4 text-white">Movies of "{searchQuery}"</h3>
+					<Container className="m-15 p-5" fluid>
+						<h3 className="mt-4 text-white">Searching for "{searchQuery}" Movies</h3>
 						<Row className="no-gutters testimonial-group ">
 							{console.log(
 								"this.state.movies.Search:",
@@ -69,9 +71,15 @@ class SearchResults extends Component {
 							)}
 							{this.state.movies.Search.length > 0 ? (
 								this.state.movies.Search.map((movie) => (
-									<Col key={movie.imdbID} className="px-1">
-										<img src={movie.Poster} alt={movie.Title} />
-										<div className="text-white">{movie.Title}</div>
+									<Col key={movie.imdbID} className="p-2">
+										<Link to={`/details/${movie.imdbID}`}>
+											<img
+												className="movieHover"
+												src={movie.Poster}
+												alt={movie.Title}
+											/>
+											<div className="text-white">{movie.Title}</div>
+										</Link>
 									</Col>
 								))
 							) : (

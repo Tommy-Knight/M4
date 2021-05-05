@@ -1,5 +1,6 @@
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
+import Link from "react-router-dom/Link"
 
 const NavBar = () => (
 	<Navbar
@@ -7,8 +8,8 @@ const NavBar = () => (
 		className="p-0"
 		style={{ backgroundColor: "#111", color: "white" }}
 	>
-		<Navbar.Brand href="#home">
-			<a className="navbar-brand" href="home">
+		<Navbar.Brand href="/">
+			<a className="navbar-brand" href="/">
 				<img
 					src="./netflix_logo.png"
 					style={{ width: "100px" }}
@@ -18,26 +19,46 @@ const NavBar = () => (
 			</a>
 		</Navbar.Brand>
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
-		<Navbar.Collapse id="basic-navbar-nav">
+		<Navbar.Collapse id="basic-navbar-nav" className="text-left ">
 			<Nav>
-				<Nav.Link href="#home" className="text-white">
-					Tv Shows
-				</Nav.Link>
-				<Nav.Link href="#link" className="text-white">
-					Add New
-				</Nav.Link>
+				<Link className="text-white m-3" to="/">
+					Home
+				</Link>
+				<Link className="text-white my-3" to="/series">
+					Series
+				</Link>
+				<Link className="text-white m-3" to="/film">
+					Film
+				</Link>
 			</Nav>
 			<Nav className="ml-auto">
-				<Nav.Link href="#home">
-					<a className="nav-link text-white" href="home">
-						KIDS
+				<Nav.Link href="/">
+					<a className="nav-link text-white" href="/">
+						CHILDREN
+					</a>
+				</Nav.Link>
+				<Nav.Link href="/">
+					<a className="navbar-brand text-white" href="/">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+						</svg>
 					</a>
 				</Nav.Link>
 				<Nav.Link>
-					<a className="navbar-brand" href="home">
+					<a className="navbar-brand" href="/">
 						<img
-							src="./public/avatar.png"
-							style={{ width: "100px" }}
+							src="./avatar.png"
+							style={{ width: "30px" }}
 							id="avatar"
 							alt="avatar"
 						/>
