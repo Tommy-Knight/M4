@@ -115,7 +115,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media14.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -124,7 +124,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media15.jpg"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -133,7 +133,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media16.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -142,7 +142,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media17.jpg"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -151,7 +151,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media18.jpg"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -160,7 +160,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media19.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -177,7 +177,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media2.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -186,7 +186,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media20.jpg"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -195,7 +195,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media21.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -204,7 +204,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media22.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -213,7 +213,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media23.webp"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
@@ -222,7 +222,7 @@ export default class Mainpage extends Component {
 											<img
 												className="img-fluid "
 												src="./assets/media/media24.jpg"
-												alt
+												alt=""
 											/>
 										</div>
 									</div>
