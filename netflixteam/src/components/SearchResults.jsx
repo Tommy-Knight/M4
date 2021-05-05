@@ -56,7 +56,7 @@ class SearchResults extends Component {
 					</Form>
 				</Container>
 				{this.state.isLoading && (
-					<Spinner animation="border" variant="primary" />
+					<Spinner animation="grow" variant="danger" />
 				)}
 				{!this.state.isLoading && this.state.isError && (
 					<Alert variant="danger">Aww snap! We got an error!</Alert>

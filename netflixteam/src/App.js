@@ -23,11 +23,11 @@ function App() {
 							<Footer />
 						</Route>
 						<Route
-							exact
 							render={(routerProps) => (
 								<DetailsPage {...routerProps} title="Show Details" />
 							)}
 							path="/details/:id"
+							exact
 						/>
 					</Switch>
 				</>
@@ -37,3 +37,4 @@ function App() {
 }
 
 export default App
+ 

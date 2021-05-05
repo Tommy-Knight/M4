@@ -40,10 +40,10 @@ class Carousel extends Component {
 		return (
 			<>
 				{this.state.isLoading && (
-					<Spinner animation="border" variant="primary" />
+					<Spinner animation="grow" variant="danger" />
 				)}
 				{!this.state.isLoading && this.state.isError && (
-					<Alert variant="danger">Aww snap! We got an error!</Alert>
+					<Alert variant="danger">Uh Oh!</Alert>
 				)}
 				{this.state.movies.Search && (
 					<Container className="m-15 p-5" fluid>
