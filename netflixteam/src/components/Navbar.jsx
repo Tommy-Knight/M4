@@ -9,14 +9,14 @@ const NavBar = () => (
 		style={{ backgroundColor: "#111", color: "white" }}
 	>
 		<Navbar.Brand href="/">
-			<a className="navbar-brand" href="/">
+			<Link className="navbar-brand" to="/">
 				<img
 					src="./netflix_logo.png"
 					style={{ width: "100px" }}
 					alt="logo"
 					id="logo"
 				/>
-			</a>
+			</Link>
 		</Navbar.Brand>
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
 		<Navbar.Collapse id="basic-navbar-nav" className="text-left ">

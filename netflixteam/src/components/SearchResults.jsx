@@ -1,6 +1,8 @@
 import { Container, Col, Row, Spinner, Alert, Form } from "react-bootstrap"
 import { Component } from "react"
-import Link from "react-router-dom/Link"
+import { Link } from "react-router-dom"
+import Carousel from "./Carousel"
+import Search from "./Search"
 
 const API = "http://www.omdbapi.com/"
 const APIKEY = "c71a553d"
@@ -32,9 +34,6 @@ class SearchResults extends Component {
 		}
 	}
 
-	selectedStyle = { border: "2px solid red", color: "red" }
-	notSelectedStyle = { border: "none", color: "black" }
-
 	onChangeFunction = (e) => {
 		searchQuery = e.target.value
 		this.componentDidMount()
@@ -46,25 +45,26 @@ class SearchResults extends Component {
 				<Container>
 					<Form>
 						<Form.Group className="mt-3">
+							<Search className="searchIcon" />
 							<Form.Control
-								style={{ color: "white", background: "black" }}
+								style={{ display: "inline-block" }}
 								type="text"
-								placeholder="Search"
+								placeholder="Search for Movie Titles..."
 								onChange={(e) => this.onChangeFunction(e)}
 							/>
 						</Form.Group>
 					</Form>
 				</Container>
-				{this.state.isLoading && (
-					<Spinner animation="grow" variant="danger" />
-				)}
+				{this.state.isLoading && <Spinner animation="grow" variant="danger" />}
 				{!this.state.isLoading && this.state.isError && (
-					<Alert variant="danger">Aww snap! We got an error!</Alert>
+					<Alert variant="danger">Uh Oh!</Alert>
 				)}
 				{this.state.movies.Search && (
 					<Container className="m-15 p-5" fluid>
-						<h3 className="mt-4 text-white">Searching for "{searchQuery}" Movies</h3>
-						<Row className="no-gutters testimonial-group ">
+						<h3 className="mt-4 text-white">
+							Searching for "{searchQuery}" Movies
+						</h3>
+						<Row>
 							{console.log(
 								"this.state.movies.Search:",
 								this.state.movies.Search
@@ -88,6 +88,9 @@ class SearchResults extends Component {
 						</Row>
 					</Container>
 				)}
+				<Carousel movie="Toy Story" />
+				<Carousel movie="Shrek" />
+				<Carousel movie="South Park" />
 			</>
 		)
 	}

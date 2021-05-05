@@ -1,10 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./css/styles.css"
 import "./css/App.css"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import SearchResults from "./components/SearchResults"
-import Carousel from "./components/Carousel"
 import DetailsPage from "./components/DetailsPage.jsx"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
@@ -15,13 +13,13 @@ function App() {
 				<>
 					<Navbar />
 					<Switch>
-						<Route path="/" exact>
-							<SearchResults />
-							<Carousel movie="Toy Story" />
-							<Carousel movie="Shrek" />
-							<Carousel movie="South Park" />
-							<Footer />
-						</Route>
+						<Route
+							render={(routerProps) => (
+								<SearchResults {...routerProps} title="home" />
+							)}
+							path="/"
+							exact
+						/>
 						<Route
 							render={(routerProps) => (
 								<DetailsPage {...routerProps} title="Show Details" />
@@ -29,7 +27,14 @@ function App() {
 							path="/details/:id"
 							exact
 						/>
+						<Route path="/series">
+							<h1>SERIES PAGE TO BE ADDED</h1>
+						</Route>
+						<Route path="/film">
+							<h1>FILMS PAGE TO BE ADDED</h1>
+						</Route>
 					</Switch>
+					<Footer />
 				</>
 			</Router>
 		</div>
@@ -37,4 +42,3 @@ function App() {
 }
 
 export default App
- 

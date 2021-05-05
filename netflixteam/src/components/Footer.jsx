@@ -4,7 +4,11 @@ import Row from "react-bootstrap/Row"
 
 const Footer = (props) => {
 	return (
-		<Container style={{ marginTop: "25px" }} id="footer">
+		<Container
+	
+			style={{ marginTop: "60px", bottom: "0px", position: "relative" }}
+			id="footer"
+		>
 			<Row>
 				<div className="col-md-3">
 					<nav>
@@ -73,7 +77,7 @@ const Footer = (props) => {
 						<br />
 						<br />
 						<a class="text-muted" href="home">
-							© 1997-2021 Netflix, Inc. 
+							© 1997-2021 Netflix, Inc.
 						</a>
 					</nav>
 				</div>
