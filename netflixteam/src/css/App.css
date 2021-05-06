@@ -81,3 +81,16 @@ textarea:focus {
 margin-left: 20%;
 margin-right: 5px;
 }
+
+.forminput {
+		color: white;
+	background: black;
+	border: 1px solid black!important;
+}
+
+.forminput:focus{
+	box-shadow: 0 0 5px rgb(252, 252, 252);
+	border: 1px solid rgb(255, 255, 255);
+		color: white;
+	background: black;
+}
