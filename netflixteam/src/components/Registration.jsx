@@ -7,6 +7,8 @@ export default class Registration extends Component {
 	state = {
 		firstName: "",
 		firstNameValid: false,
+		lastName: "",
+		lastNameValid: false,
 		planetValue: "",
 		planetValid: false,
 
@@ -19,14 +21,10 @@ export default class Registration extends Component {
 		 else 
 			this.setState({ allValid: false })
 		}
-	
 
 	render() {
 		return (
-			<Form
-				
-				style={{ marginLeft: "200px", marginRight: "200px" }}
-			>
+			<Form style={{ marginLeft: "200px", marginRight: "200px" }}>
 				<Form.Row>
 					<Form.Group as={Col}>
 						<Form.Label>First Name</Form.Label>
@@ -54,6 +52,19 @@ export default class Registration extends Component {
 						<Form.Control
 							className="forminput"
 							placeholder="Last name"
+							// value={this.state.firstName}
+							onChange={(e) => {
+								this.setState({ firstName: e.target.value })
+								if (e.target.value.length < 2)
+									this.setState({
+										firstNameValid: false,
+									})
+								else
+									this.setState({
+										firstNameValid: true,
+									})
+								this.formValid()
+							}}
 							required
 						/>
 					</Form.Group>
@@ -69,6 +80,19 @@ export default class Registration extends Component {
 							className="forminput"
 							type="email"
 							placeholder="Enter email"
+							// value={this.state.firstName}
+							onChange={(e) => {
+								this.setState({ firstName: e.target.value })
+								if (e.target.value.length < 2)
+									this.setState({
+										firstNameValid: false,
+									})
+								else
+									this.setState({
+										firstNameValid: true,
+									})
+								this.formValid()
+							}}
 							required
 						/>
 					</Form.Group>
@@ -79,22 +103,83 @@ export default class Registration extends Component {
 							className="forminput"
 							type="password"
 							placeholder="Password"
+							// value={this.state.firstName}
+							onChange={(e) => {
+								this.setState({ firstName: e.target.value })
+								if (e.target.value.length < 2)
+									this.setState({
+										firstNameValid: false,
+									})
+								else
+									this.setState({
+										firstNameValid: true,
+									})
+								this.formValid()
+							}}
 							required
 						/>
 					</Form.Group>
 				</Form.Row>
 				<Form.Group controlId="formGridAddress1">
 					<Form.Label>Address</Form.Label>
-					<Form.Control className="forminput" required />
+					<Form.Control
+						className="forminput"
+						// value={this.state.firstName}
+						onChange={(e) => {
+							this.setState({ firstName: e.target.value })
+							if (e.target.value.length < 2)
+								this.setState({
+									firstNameValid: false,
+								})
+							else
+								this.setState({
+									firstNameValid: true,
+								})
+							this.formValid()
+						}}
+						required
+					/>
 				</Form.Group>
 				<Form.Row>
 					<Form.Group as={Col} controlId="formGridCity">
 						<Form.Label>City</Form.Label>
-						<Form.Control className="forminput" required />
+						<Form.Control
+							className="forminput"
+							// value={this.state.firstName}
+							onChange={(e) => {
+								this.setState({ firstName: e.target.value })
+								if (e.target.value.length < 2)
+									this.setState({
+										firstNameValid: false,
+									})
+								else
+									this.setState({
+										firstNameValid: true,
+									})
+								this.formValid()
+							}}
+							required
+						/>
 					</Form.Group>
 					<Form.Group as={Col} controlId="formGridZip">
 						<Form.Label>Post Code</Form.Label>
-						<Form.Control className="forminput" required />
+						<Form.Control
+							className="forminput"
+							// value={this.state.firstName}
+							onChange={(e) => {
+								this.setState({ firstName: e.target.value })
+								if (e.target.value.length < 2)
+									this.setState({
+										firstNameValid: false,
+									})
+								else
+									this.setState({
+										firstNameValid: true,
+									})
+								this.formValid()
+							}}
+							required
+						/>
 					</Form.Group>
 					<Form.Group as={Col} controlId="formGridState">
 						<Form.Label>Planet</Form.Label>
@@ -129,6 +214,19 @@ export default class Registration extends Component {
 					<Form.Control
 						className="forminput"
 						placeholder="XXXX-XXXX-XXXX-XXXX"
+						// value={this.state.firstName}
+						onChange={(e) => {
+							this.setState({ firstName: e.target.value })
+							if (e.target.value.length < 2)
+								this.setState({
+									firstNameValid: false,
+								})
+							else
+								this.setState({
+									firstNameValid: true,
+								})
+							this.formValid()
+						}}
 						required
 					/>
 				</Form.Group>

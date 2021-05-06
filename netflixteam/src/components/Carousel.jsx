@@ -36,9 +36,7 @@ class Carousel extends Component {
 	render() {
 		return (
 			<>
-				{this.state.isLoading && (
-					<Spinner animation="grow" variant="danger" />
-				)}
+
 				{!this.state.isLoading && this.state.isError && (
 					<Alert variant="danger">Uh Oh!</Alert>
 				)}
