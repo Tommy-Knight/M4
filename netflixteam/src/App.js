@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import "./css/App.css"
 import Navbar from "./components/Navbar"
 import Carousel from "./components/Carousel"
@@ -6,7 +7,6 @@ import SearchResults from "./components/SearchResults"
 import DetailsPage from "./components/DetailsPage"
 import Registration from "./components/Registration"
 import Footer from "./components/Footer"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
 	return (
