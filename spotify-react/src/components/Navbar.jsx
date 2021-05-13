@@ -97,7 +97,7 @@ export default class Navbar extends Component {
 					<div className="smallnav">
 						<hr />
 						<div className="smallnavicon">
-							<Link to="/home" className="greenborder homeGreen">
+							<Link to="/home" className=" mininav">
 								<svg
 									className="mr-2 mb-2"
 									xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ export default class Navbar extends Component {
 							</Link>
 						</div>
 						<div className="smallnavicon">
-							<Link to="/search" className="greenborder searchGreen">
+							<Link to="/search" className=" mininav">
 								<svg
 									className="mr-2 mb-2"
 									xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ export default class Navbar extends Component {
 							</Link>
 						</div>
 						<div className="smallnavicon">
-							<Link to="/library" className="greenborder libraryGreen">
+							<Link to="/library" className=" mininav">
 								<svg
 									className="mr-2 mb-2"
 									xmlns="http://www.w3.org/2000/svg"

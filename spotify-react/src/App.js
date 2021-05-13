@@ -32,7 +32,7 @@ function App() {
 								<Library {...routerProps} title="" />
 							)}
 							path="/library"
-							exact
+							
 						/>
 
 						<Route path="/">

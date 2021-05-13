@@ -2,41 +2,45 @@ import { Container, Col, Row, Spinner, Alert, Form } from "react-bootstrap"
 import { Component } from "react"
 import { Link } from "react-router-dom"
 
-
-let searchQuery = ""
-
 class Search extends Component {
 	state = {
 		songs: {},
-		isLoading: false,
-		isError: false,
+		showSpinner: false,
+		findError: false,
+		searchQuery: "",
 	}
 
-	componentDidMount = async () => {
+	componentDidMount = () => {
+		this.fetchResults()
+	}
+
+	fetchResults = async () => {
 		try {
 			this.setState({
-				isLoading: true,
+				showSpinner: true,
 			})
 
 			let response = await fetch(
-				"https://striveschool-api.herokuapp.com/api/deezer/search?q=" + {searchQuery}
+				"https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
+					this.state.searchQuery
 			)
 			if (response.ok) {
-				let data = await response.json()
+				let jsonData = await response.json()
+				let data = jsonData.data
 				console.log(data)
-				this.setState({ songs: data, isError: false, isLoading: false })
+				this.setState({ songs: data, findError: false, showSpinner: false })
 			} else {
-				this.setState({ isError: true, isLoading: false })
+				this.setState({ findError: true, showSpinner: false })
 			}
 		} catch (error) {
-			console.log(error)
-			this.setState({ isError: true, isLoading: false })
+			console.log(`${error} fetch failed`)
+			this.setState({ findError: true, showSpinner: false })
 		}
 	}
 
 	onChangeFunction = (e) => {
-		searchQuery = e.target.value
-		this.componentDidMount()
+		e.preventDefault()
+		this.setState({ searchQuery: e.target.value }, () => this.fetchResults())
 	}
 
 	render() {
@@ -45,54 +49,93 @@ class Search extends Component {
 				<Container>
 					<Form>
 						<Form.Group className="mt-3">
+							<svg
+								className="mr-2 mb-2"
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<circle cx="11" cy="11" r="8"></circle>
+								<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+							</svg>
 							<Form.Control
 								style={{ display: "inline-block" }}
 								type="text"
-								placeholder="Search for Song Titles, Artists..."
-								onChange={(e) => {this.onChangeFunction(e) 
-									console.log(this.state.data)}}
+								placeholder="Search for Albums, Artists..."
+								onChange={(e) => {
+									this.onChangeFunction(e)
+								}}
 							/>
 						</Form.Group>
 					</Form>
-					{this.state.isLoading && (
-						<Spinner
-							style={{ marginLeft: "20%" }}
-							animation="grow"
-							variant="success"
-						/>
-					)}
 				</Container>
 
-
-				{!this.state.isLoading && this.state.isError && (
-					<Alert variant="success">Uh Oh!</Alert>
+				{this.state.findError && (
+					<Alert variant="success">
+						Uh Oh! We can't find what you're looking for.{" "}
+					</Alert>
 				)}
 
-				{this.state.songs.Search && (
-					<Container className="m-15 p-5" fluid>
-						<h3 className="mt-4 text-white">
-							Searching for "{searchQuery}" songs
-						</h3>
-						<Row>
-							{this.state.songs.length > 0 ? (
-								this.state.songs.map((song) => (
-									<Col key={song.id} className="p-2">
-										<Link to={`/info/${song.id}`}>
+						{this.state.showSpinner && (
+							<Spinner
+								style={{ marginLeft: "6px" }}
+								animation="grow"
+								variant="success"
+							/>
+						)}
+				<Container className="m-15 p-5" fluid>
+					<h3 className="mt-4 text-white">
+						Searching for "{this.state.searchQuery}"
+					</h3>
+					<Row>
+
+						{this.state.songs.length > 0 ? (
+							this.state.songs.map((song) => (
+								<div>
+									<Col key={song.id} className="my-2">
+										<Link to={`/library/${song.id}`}>
 											<img
+												style={{ marginTop: "20px" }}
 												className="iconHover"
-												src={song.picture_medium}
-												alt={song.title}
+												src={song.album.cover}
+												alt={song.album.title}
 											/>
-											<div className="text-white">{song.title}</div>
+											<div
+												style={{ width: "145px", marginBottom: "50px" }}
+												className="text-white albumSearch"
+											>
+												{song.album.title}
+											</div>
 										</Link>
 									</Col>
-								))
-							) : (
-								<p>We don't have songs yet!</p>
-							)}
-						</Row>
-					</Container>
-				)}
+									<Col className="my-2">
+										<Link to={`/library/${song.id}`}>
+											<img
+												className="iconHover"
+												src={song.artist.picture}
+												alt={song.artist.name}
+											/>
+											<div
+												style={{ width: "145px", marginBottom: "142px" }}
+												className="text-white albumSearch"
+											>
+												{song.artist.name}
+											</div>
+										</Link>
+									</Col>
+								</div>
+							))
+						) : (
+							<p>Nothing Here!</p>
+						)}
+					</Row>
+				</Container>
 			</>
 		)
 	}
